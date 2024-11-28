@@ -1,13 +1,12 @@
 package pawsitive.pawsitive_BE.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import pawsitive.pawsitive_BE.domain.common.BaseEntity;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -18,17 +17,29 @@ public class Shelter extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
+    @Column(nullable = false, length =30)
     private String name;
 
+    @Column(nullable = false, length =20)
     private String phone;
 
+    @Column(nullable = false, length =10)
     private String managerName;
 
+    @Column(nullable = false, length =20)
     private String managerPhone;
 
+    @Column(nullable = false)
     private String address;
 
+    @Column(nullable = false, length =10)
     private String region;
+
+    @OneToMany(mappedBy = "shelter", cascade = CascadeType.ALL)
+    private List<Volunteer> volunteers = new ArrayList<>();
+
+    @OneToMany(mappedBy = "shelter", cascade = CascadeType.ALL)
+    private List<Adoption> adoptions = new ArrayList<>();
 }
