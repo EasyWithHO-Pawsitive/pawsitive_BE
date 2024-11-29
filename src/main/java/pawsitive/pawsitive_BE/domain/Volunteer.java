@@ -21,23 +21,24 @@ public class Volunteer extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false, length =30)
+    @Column(nullable = false)
     private String title;
 
     @Column(nullable = false)
-    private Date volunteerDate;
+    private String volunteerDate;
 
     @Column(nullable = false)
     private Integer numberOfStaff;
 
-    @Column(nullable = false)
+    @Lob
+    @Column(columnDefinition = "TEXT")
     private String content;
 
     @Column(nullable = false)
-    private LocalDateTime startTime;
+    private String startTime;
 
     @Column(nullable = false)
-    private LocalDateTime endTime;
+    private String endTime;
 
 
     @Enumerated(EnumType.STRING)

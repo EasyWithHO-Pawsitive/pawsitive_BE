@@ -17,10 +17,11 @@ public class Adoption extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false, length = 300)
+    @Lob
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
 
     @Column(nullable = false, length = 20)
@@ -42,6 +43,6 @@ public class Adoption extends BaseEntity {
     private Status status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="shelter_id")
+    @JoinColumn(name="shelter_id", nullable = true)
     private Shelter shelter;
 }

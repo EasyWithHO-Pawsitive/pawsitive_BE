@@ -37,9 +37,5 @@ public class Shelter extends BaseEntity {
     @Column(nullable = false, length =10)
     private String region;
 
-    @OneToMany(mappedBy = "shelter", cascade = CascadeType.ALL)
-    private List<Volunteer> volunteers = new ArrayList<>();
 
-    @OneToMany(mappedBy = "shelter", cascade = CascadeType.ALL)
-    private List<Adoption> adoptions = new ArrayList<>();
 }
