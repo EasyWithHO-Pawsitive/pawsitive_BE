@@ -34,7 +34,7 @@ public class Adoption extends BaseEntity {
     private Gender gender;
 
     @Column(nullable = false)
-    private Boolean neutering = false;
+    private Boolean neutering;
 
     @Column(nullable = false, length = 10)
     private String age;

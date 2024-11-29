@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import pawsitive.pawsitive_BE.domain.common.BaseEntity;
 
-import java.time.LocalDateTime;
-
 @Entity
 @Getter
 @Builder

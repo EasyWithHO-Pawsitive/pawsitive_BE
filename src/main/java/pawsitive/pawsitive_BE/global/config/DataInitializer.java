@@ -4,16 +4,14 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 import pawsitive.pawsitive_BE.domain.Adoption;
 import pawsitive.pawsitive_BE.domain.Shelter;
+import pawsitive.pawsitive_BE.domain.User;
 import pawsitive.pawsitive_BE.domain.Volunteer;
 import pawsitive.pawsitive_BE.domain.enums.Gender;
 import pawsitive.pawsitive_BE.domain.enums.Status;
 import pawsitive.pawsitive_BE.repository.AdoptionRepository;
 import pawsitive.pawsitive_BE.repository.ShelterRepository;
+import pawsitive.pawsitive_BE.repository.UserRepository;
 import pawsitive.pawsitive_BE.repository.VolunteerRepository;
-
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.Date;
 
 @Component
 public class DataInitializer {
@@ -21,15 +19,26 @@ public class DataInitializer {
     private final ShelterRepository shelterRepository;
     private final AdoptionRepository adoptionRepository;
     private final VolunteerRepository volunteerRepository;
+    private final UserRepository userRepository;
 
-    public DataInitializer( ShelterRepository shelterRepository, AdoptionRepository adoptionRepository, VolunteerRepository volunteerRepository) {
+    public DataInitializer( ShelterRepository shelterRepository, AdoptionRepository adoptionRepository, VolunteerRepository volunteerRepository, UserRepository userRepository) {
         this.shelterRepository = shelterRepository;
         this.adoptionRepository = adoptionRepository;
         this.volunteerRepository = volunteerRepository;
+        this.userRepository = userRepository;
     }
 
     @PostConstruct
     public void init() {
+
+        if (userRepository.count() == 0) {
+            User user = User.builder()
+                    .userId("test123").password( "1234").name("테스트걸").birth( "2000-11-17").phone("010-0000-0000").
+                    build();
+            userRepository.save(user);
+        }
+
+
         if (shelterRepository.count() == 0) {
             // Shelter 더미 데이터
             Shelter shelter1 = Shelter.builder()
