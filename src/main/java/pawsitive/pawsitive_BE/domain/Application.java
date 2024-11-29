@@ -22,4 +22,9 @@ public class Application extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="volunteer_id")
     private Volunteer volunteer;
+
+    public Application(User user, Volunteer volunteer) {
+        this.user = user;
+        this.volunteer = volunteer;
+    }
 }

@@ -5,4 +5,5 @@ import pawsitive.pawsitive_BE.web.dto.volunteer.VolunteerResponse;
 
 public interface VolunteerService {
     VolunteerResponse.VolunteerListResultDTO volunteerList();
+    VolunteerResponse.VolunteerDetailResultDTO volunteerDetail(Integer postId);
 }

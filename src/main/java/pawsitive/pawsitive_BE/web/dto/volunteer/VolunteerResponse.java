@@ -28,4 +28,24 @@ public class VolunteerResponse {
         String shelterName;
         String region;
     }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class VolunteerDetailResultDTO {
+        Integer id;
+        String title;
+        String volunteerDate;
+        Integer numberOfStaffs;
+        String status;
+        String region;
+        String startTime;
+        String endTime;
+        String content;
+        String managerName;
+        String phone;
+        String shelterName;
+        String address;
+    }
 }
