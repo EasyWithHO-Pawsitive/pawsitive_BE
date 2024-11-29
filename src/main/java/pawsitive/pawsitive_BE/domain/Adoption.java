@@ -43,6 +43,6 @@ public class Adoption extends BaseEntity {
     private Status status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="shelter_id", nullable = true)
+    @JoinColumn(name = "shelter_id")
     private Shelter shelter;
 }

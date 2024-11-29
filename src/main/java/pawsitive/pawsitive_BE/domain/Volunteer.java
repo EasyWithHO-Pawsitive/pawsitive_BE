@@ -40,9 +40,7 @@ public class Volunteer extends BaseEntity{
     @Column(nullable = false)
     private String endTime;
 
-
-    @Enumerated(EnumType.STRING)
-    @Column(columnDefinition = "varchar(10) default 'OPEN")
+    @Column(nullable = false)
     private Status status;
 
     @ManyToOne(fetch = FetchType.LAZY)

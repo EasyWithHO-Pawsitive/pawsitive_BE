@@ -7,14 +7,10 @@ spring:
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.MySQLDialect
         show_sql: true
         format_sql: true
         use_sql_comments: true
         hbm2ddl:
           auto: update
         default_batch_fetch_size: 1000
-
-jwt:
-  secret:
-    key: x!A%D*G-KaPdSgVkYp3s5v8y/B?E(H+M

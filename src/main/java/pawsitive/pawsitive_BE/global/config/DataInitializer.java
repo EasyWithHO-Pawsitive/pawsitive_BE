@@ -80,7 +80,7 @@ public class DataInitializer {
             Shelter shelter5 = Shelter.builder()
                     .name("안다")
                     .phone("010-5512-5513")
-                    .managerName("이은주\n")
+                    .managerName("이은주")
                     .managerPhone("010-5512-5513")
                     .address("경기도 평택시 오좌동길 47-48 (독곡동, 전원유치원) 1층")
                     .region("경기")
@@ -347,12 +347,12 @@ public class DataInitializer {
 
             Adoption adoption3 = Adoption.builder()
                     .title("[개] 믹스견")
-                    .description("세상 귀여운 믹스견입니다 손덕마을에서 발견했어요")
+                    .description("애교 쟁이 강아지입니다. 최고 귀여워요. 아픈 곳 없고 사람도 잘 따릅니다.")
                     .type("강아지")
                     .specType("믹스견")
                     .gender(Gender.MALE) // Gender 열거형 값
-                    .neutering(false)
-                    .age("2022년생")
+                    .neutering(true)
+                    .age("2020년생")
                     .status(Status.OPEN) // Status 열거형 값
                     .shelter(shelter8) // shelter 설정
                     .build();
@@ -369,10 +369,23 @@ public class DataInitializer {
                     .shelter(shelter8) // shelter 설정
                     .build();
 
+            Adoption adoption5 = Adoption.builder()
+                    .title("[고양이] 러시안블루")
+                    .description("애교 쟁이 고양이입니다. 최고 귀여워요. 아픈 곳 없고 사람도 잘 따릅니다.")
+                    .type("고양이")
+                    .specType("러시안블루")
+                    .gender(Gender.MALE) // Gender 열거형 값
+                    .neutering(true)
+                    .age("2017년생")
+                    .status(Status.OPEN) // Status 열거형 값
+                    .shelter(shelter1) // shelter 설정
+                    .build();
+
             adoptionRepository.save(adoption1);
             adoptionRepository.save(adoption2);
             adoptionRepository.save(adoption3);
             adoptionRepository.save(adoption4);
+            adoptionRepository.save(adoption5);
         }
 
     }
