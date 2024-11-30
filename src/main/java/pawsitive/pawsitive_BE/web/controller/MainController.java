@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import pawsitive.pawsitive_BE.global.apiPayload.Response;
 import pawsitive.pawsitive_BE.service.MainService;
 import pawsitive.pawsitive_BE.web.dto.main.MainResponse;
-import pawsitive.pawsitive_BE.web.dto.user.UserResponse;
 
 @RestController
 @RequiredArgsConstructor
