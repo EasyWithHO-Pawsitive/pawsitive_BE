@@ -26,9 +26,6 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findByUserId(id)
                 .orElseThrow(() -> new UserException(ErrorCode.USER_NOT_FOUND));
 
-        System.out.println("입력된 비밀번호: " + password);
-        System.out.println("저장된 비밀번호: " + user.getPassword());
-
         if (!password.equals(user.getPassword())) {
             throw new UserException(ErrorCode.INVALID_PASSWORD);
         }

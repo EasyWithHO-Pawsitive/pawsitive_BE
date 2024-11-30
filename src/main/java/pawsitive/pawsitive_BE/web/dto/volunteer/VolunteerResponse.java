@@ -48,4 +48,12 @@ public class VolunteerResponse {
         String shelterName;
         String address;
     }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class VolunteerPostResultDTO {
+        Integer id;
+    }
 }
